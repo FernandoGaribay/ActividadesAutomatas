@@ -17,7 +17,6 @@ public class OperacionesLenguajes {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int numPalabras;
         String[] L1;
         String[] L2;
 
@@ -62,7 +61,7 @@ class OperacionesLenguajesCalcular {
     }
 
     public void mostrarMenu() {
-        Scanner scanner = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
         int opcion;
 
         do {
@@ -74,7 +73,7 @@ class OperacionesLenguajesCalcular {
             System.out.println("5. Sufijos de una palabra");
             System.out.println("6. Salir del Sistema");
             System.out.print("\n*Seleccione una opción: ");
-            opcion = scanner.nextInt();
+            opcion = input.nextInt();
 
             String[] resultado;
             switch (opcion) {
@@ -110,7 +109,7 @@ class OperacionesLenguajesCalcular {
             }
             System.out.println();
         } while (opcion != 6);
-        scanner.close();
+        input.close();
     }
 
     public String[] calcularInterseccion(String[] L1, String[] L2) {
@@ -144,6 +143,9 @@ class OperacionesLenguajesCalcular {
             if (!listaL2.contains(palabra)) {
                 diferencia.add(palabra);
             }
+        }
+        if (diferencia.isEmpty()) {
+            diferencia.add("ᴓ");
         }
 
         String[] diferenciaArray = new String[diferencia.size()];
